@@ -35,7 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.headers().frameOptions().disable();
         http.cors().and().csrf().disable()
-                //.addFilterAfter(new JWTFilter(), UsernamePasswordAuthenticationFilter.class)
+                // .addFilterAfter(new JWTFilter(), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
                 .antMatchers(SWAGGER_WHITELIST).permitAll()
                 .antMatchers("/h2-console/**").permitAll()
